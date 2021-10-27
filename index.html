@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hooper@0.2.1/dist/hooper.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hooper@0.2.1/dist/hooper.min.js"></script>
+</head>
+<body>
+  <div id="app" class="container">
+    <div class="title">
+      <h1>プログラミングゲーム</h1>
+      <div class="marker"></div>
+    </div>
+
+    <div v-if="slideDisplay1" class="mb-20">
+      <hooper>
+        <slide>
+          ここではプログラミング言語である「python」を少しだけ体験してもらいます。
+        </slide>
+        <slide>
+          Pythonはシンプルで英語に近く、理解しやすいプログラミング言語です。
+        </slide>
+        <slide>
+          Pythonを使うとWebアプリケーション開発や機械学習、統計処理などといった様々なことが可能になります。
+        </slide>
+        <slide>
+          GoogleやFacebookなどのトップIT企業でも開発言語として採用されています。
+        </slide>
+        <slide>
+          それではまず、Pythonの機能「print」の説明です。
+        </slide>
+        <slide>
+          「print」を用いると文字を出力（表示）することができます。
+        </slide>
+        <slide>
+          printの後ろの()の中に書いた文字が画面に出力されます。ex)print("Hello Python") --> Hello Python
+        </slide>
+        <slide>
+          先ほどの例で用いた「Hello Python」という文字は、プログラミングの世界では「文字列」と呼ばれます。
+        </slide>
+        <slide>
+          文字列はダブルクォーテーション「"」等で囲む必要があります。囲んでいない場合コードは動かなくなります。
+        </slide>
+        <slide>
+          では、問題を解いていきましょう。次のページのボタンを押してください。
+        </slide>
+        <slide>
+          <button class="startButton mb-20" @click="close1();gameStart()">STRAT</button>
+        </slide>
+
+        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+      </hooper>
+    </div>
+
+    <div v-if="slideDisplay2" class="mb-20">
+      <hooper>
+        <slide>
+          正解！
+        </slide>
+        <slide>
+          プログラミングでは、「数値」も扱うことができます。数値は文字列と違って、""で囲む必要がありません。
+        </slide>
+        <slide>
+          数学と同じ記号「+」「-」を用いて、足し算と引き算が可能です。数値や記号はすべて半角で記述します。
+        </slide>
+        <slide>
+          print(1+1)は計算結果である「2」を出力してくれます。
+        </slide>
+        <slide>
+          一方、「"1+1"」のように""で囲むと、文字列として解釈されて、そのまま「1+1」が出力されます。
+        </slide>
+        <slide>
+          このようにプログラミングの世界では、文字列と数値は全く異なるものとして扱われます。
+        </slide>
+        <slide>
+          <button class="startButton mb-20" @click="close2();gameStart()">STRAT</button>
+        </slide>
+        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+      </hooper>
+    </div>
+
+    <div v-if="slideDisplay3" class="mb-20">
+      <hooper>
+        <slide>
+          正解！
+        </slide>
+        <slide>
+          次は「変数」についてです。変数とは、データ（値）を入れておく箱のようなものです。
+        </slide>
+        <slide>
+          この箱に名前（変数名）をつけることで、その名前を用いて変数に値を入れたり、取り出すことができます。
+        </slide>
+        <slide>
+          変数は「変数名 = 値」で定義します。変数名は""で囲む必要はありません。ex) x = "apple"
+        </slide>
+        <slide>
+          また、プログラミングの「=」は「等しい」という意味ではなく、「右辺を左辺に代入する」という意味です。
+        </slide>
+        <slide>
+          name = "John"; print(name) とすると変数nameの値であるJohnが出力されます。
+        </slide>
+        <slide>
+          数値と同様、変数も""で囲ってしまうと文字列として認識されてしまうため注意してください。
+        </slide>
+        <slide>
+          <button class="startButton mb-20" @click="close3();gameStart()">STRAT</button>
+        </slide>
+
+        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+      </hooper>
+    </div>
+
+    <div v-if="slideDisplay4" class="mb-20">
+      <hooper>
+        <slide>
+          正解！
+        </slide>
+        <slide>
+          数値の計算で用いた「+」記号は、計算だけでなく文字列の連結も行うことができます。
+        </slide>
+        <slide>
+          文字列の連結は下のようにしてください。  print("Hello" + "Python")
+        </slide>
+        <slide>
+          他にも、変数と文字列の連結、変数同士の連結をすることができます。
+        </slide>
+        <slide>
+          <button class="startButton mb-20" @click="close4();gameStart()">STRAT</button>
+        </slide>
+
+        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+      </hooper>
+    </div>
+
+    <div v-if="slideDisplay5" class="mb-20">
+      <hooper>
+        <slide>
+          正解！！！
+        </slide>
+        <slide>
+          最後に条件分岐について学んでいきましょう。
+        </slide>
+        <slide>
+          pythonでは「if文」を用いると「もし○○ならば☓☓を行う」という条件分岐が可能になります。
+        </slide>
+        <slide>
+          if文は「条件式」と「その条件が成り立つときに実行する処理」から成ります。
+        </slide>
+        <slide>
+          条件式の中では、２つの値を比較するための記号「比較演算子」がよく使われます。
+        </slide>
+        <slide>
+          例えば  x == y （左右の値が等しいとき成り立つ）, x != y（左右の値が等しくないとき成り立つ）など
+        </slide>
+        <slide>
+          if文の条件部分は下のように「if 条件式 :」のように書きます。  if 3+1 == 4:
+        </slide>
+        <slide>
+          if文の条件式が成立した時、その下の処理が実行されるようになります。
+        </slide>
+        <slide>
+          <button class="startButton mb-20" @click="close5();gameStart()">STRAT</button>
+        </slide>
+
+        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+      </hooper>
+    </div>
+
+
+      <div v-if="startFlg">
+        <div class="question mb-20" style="white-space: pre-line; word-wrap:break-word;">{{current_question}}</div>
+        <div v-if="current_question_counts === question_counts" class="clear">Clear!</div>
+        <div v-if="current_question_counts === question_counts" class="clear">Thank you for playing!</div>
+        <br v-if="current_question_counts === question_counts" class="clear">
+        <div v-if="current_question_counts === question_counts" class="clear">もしプログラミングに興味がでたらぜひ自分で調べてやってみてください！</div>
+        <div v-if="current_question_counts === question_counts" class="clear">参考サイト: https://prog-8.com</div>
+        <div class="typeFormWrapper mb-20">
+          <input id="typeForm" v-model="typeBox" type="text" class="typeForm">
+        </div>
+      </div>
+      <div class="gaugeWrapper mb-20">
+        <div v-bind:style="styleObject" class="gauge"></div>
+      </div>
+      <div class="">{{current_question_counts}}/{{question_counts}}</div>
+    </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        startFlg:false,
+        slideDisplay1:true,
+        slideDisplay2:false,
+        slideDisplay3:false,
+        slideDisplay4:false,
+        slideDisplay5:false,
+        current_question:"",
+        questions:[
+          '「Hello INIAD」を出力するために以下のコードの\nXXXを何に置き換えたら\nよいでしょうか。\nただし文字は" "\nで囲ってください。\n\nprint( XXX )',
+          '「3+7」を計算をし、結果を出力するようにするにはXXXを何に修正したらよいでしょうか。\n\nprint( XXX )',
+          '「Ken」を出力するために、nameの中身を\nXXXから何に修正したら\nよいでしょうか。\n\nname = XXX\nprint(name)',
+          '「My name is Ken」を出力するために、\nXXXを適切な変数の名前に修正してください。\n\nname = "Ken"\nprint("My name is "\\\ \n + XXX)',
+          '以下のif文の条件式が成り立つときの処理が実行されるためには、XXXの値が何だったらよいでしょう。\n\nscore = XXX\nif score == 100: \n    print("よくできました！")',
+        ],
+        answer:[
+          '"Hello INIAD"',
+          '3+7',
+          'Ken',
+          'name',
+          '100',
+        ],
+        typeBox:"",
+        current_question_counts:0,
+        question_counts:0
+      },
+      computed:{
+        styleObject:function(){
+          width = 20 * this.current_question_counts + "%"
+          if(this.current_question_counts === 5){
+            color = "lightblue"
+          }else{
+            color = "orange"
+          }
+          return{
+            'width':width,
+            'background-color': color
+          }
+        }
+      },
+      methods:{
+        gameStart: function(){
+          this.startFlg = true;
+          this.$nextTick(function(){
+            document.getElementById('typeForm').focus()
+          })
+        },
+        close1: function(){
+          this.slideDisplay1 = false;
+        },
+        close2: function(){
+          this.slideDisplay2 = false;
+        },
+        close3: function(){
+          this.slideDisplay3 = false;
+        },
+        close4: function(){
+          this.slideDisplay4 = false;
+        },
+        close5: function(){
+          this.slideDisplay5 = false;
+        }
+      },
+      mounted:function(){
+        this.current_question = this.questions[0]
+        this.current_answer = this.answer[0]
+        this.question_counts = this.questions.length
+      },
+      watch:{
+        typeBox:function(e){
+          if(e === this.current_answer){
+            this.questions.splice(0,1)
+            this.answer.splice(0,1)
+            this.current_question = this.questions[0]
+            this.current_answer = this.answer[0]
+            this.typeBox = ""
+            this.current_question_counts = this.current_question_counts + 1
+          }
+          if(this.current_question_counts === 1){
+            this.startFlg = false;
+            this.slideDisplay2 = true;
+          }else if(this.current_question_counts === 2){
+            this.startFlg = false;
+            this.slideDisplay3 = true;
+          }else if(this.current_question_counts === 3){
+            this.startFlg = false;
+            this.slideDisplay4 = true;
+          }else if(this.current_question_counts === 4){
+            this.startFlg = false;
+            this.slideDisplay5 = true;
+          }
+        }
+      },
+      components:{
+        Hooper: window.Hooper.Hooper,
+        Slide: window.Hooper.Slide
+      }
+    })
+  </script>
+</body>
+</html>
