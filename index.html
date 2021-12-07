@@ -50,7 +50,7 @@
           では、問題を解いていきましょう。次のページのボタンを押してください。
         </slide>
         <slide>
-          <button class="startButton mb-20" @click="close1();gameStart()">STRAT</button>
+          <button class="startButton mb-20" @click="close1(); gameStart()">STRAT</button>
         </slide>
 
         <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -78,7 +78,7 @@
           このようにプログラミングの世界では、文字列と数値は全く異なるものとして扱われます。
         </slide>
         <slide>
-          <button class="startButton mb-20" @click="close2();gameStart()">STRAT</button>
+          <button class="startButton mb-20" @click="close2(); gameStart()">STRAT</button>
         </slide>
         <hooper-navigation slot="hooper-addons"></hooper-navigation>
       </hooper>
@@ -108,7 +108,7 @@
           数値と同様、変数も""で囲ってしまうと文字列として認識されてしまうため注意してください。
         </slide>
         <slide>
-          <button class="startButton mb-20" @click="close3();gameStart()">STRAT</button>
+          <button class="startButton mb-20" @click="close3(); gameStart()">STRAT</button>
         </slide>
 
         <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -130,7 +130,7 @@
           他にも、変数と文字列の連結、変数同士の連結をすることができます。
         </slide>
         <slide>
-          <button class="startButton mb-20" @click="close4();gameStart()">STRAT</button>
+          <button class="startButton mb-20" @click="close4(); gameStart()">STRAT</button>
         </slide>
 
         <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -164,7 +164,7 @@
           if文の条件式が成立した時、その下の処理が実行されるようになります。
         </slide>
         <slide>
-          <button class="startButton mb-20" @click="close5();gameStart()">STRAT</button>
+          <button class="startButton mb-20" @click="close5(); gameStart()">STRAT</button>
         </slide>
 
         <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -180,7 +180,7 @@
         <div v-if="current_question_counts === question_counts" class="clear">もしプログラミングに興味がでたらぜひ自分で調べてやってみてください！</div>
         <div v-if="current_question_counts === question_counts" class="clear">参考サイト: https://prog-8.com</div>
         <div class="typeFormWrapper mb-20">
-          <input id="typeForm" v-model="typeBox" type="text" class="typeForm">
+          <input v-model="typeBox" type="text" id="typeForm" class="typeForm">
         </div>
       </div>
       <div class="gaugeWrapper mb-20">
@@ -252,7 +252,12 @@
         },
         close5: function(){
           this.slideDisplay5 = false;
+        },
+        /*ここでクリア時に行う関数を定義してください
+        exsample: function(){
+          alert("よくできました")
         }
+        */
       },
       mounted:function(){
         this.current_question = this.questions[0]
@@ -268,19 +273,25 @@
             this.current_answer = this.answer[0]
             this.typeBox = ""
             this.current_question_counts = this.current_question_counts + 1
+            if(this.current_question_counts === 1){
+              this.startFlg = false;
+              this.slideDisplay2 = true;
+            }else if(this.current_question_counts === 2){
+              this.startFlg = false;
+              this.slideDisplay3 = true;
+            }else if(this.current_question_counts === 3){
+              this.startFlg = false;
+              this.slideDisplay4 = true;
+            }else if(this.current_question_counts === 4){
+              this.startFlg = false;
+              this.slideDisplay5 = true;
+            }
           }
-          if(this.current_question_counts === 1){
-            this.startFlg = false;
-            this.slideDisplay2 = true;
-          }else if(this.current_question_counts === 2){
-            this.startFlg = false;
-            this.slideDisplay3 = true;
-          }else if(this.current_question_counts === 3){
-            this.startFlg = false;
-            this.slideDisplay4 = true;
-          }else if(this.current_question_counts === 4){
-            this.startFlg = false;
-            this.slideDisplay5 = true;
+        },
+        current_question_counts:function(counts){
+          if(counts === this.question_counts){
+            //ここにクリア時に呼び出す関数を書いてください
+            //this.exsample()
           }
         }
       },
