@@ -102,7 +102,7 @@
           また、プログラミングの「=」は「等しい」という意味ではなく、「右辺を左辺に代入する」という意味です。
         </slide>
         <slide>
-          name = "John"; print(name) とすると変数nameの値であるJohnが出力されます。
+          name = "John" print(name) とすると変数nameの値であるJohnが出力されます。
         </slide>
         <slide>
           数値と同様、変数も""で囲ってしまうと文字列として認識されてしまうため注意してください。
@@ -164,7 +164,7 @@
           if文の条件式が成立した時、その下の処理が実行されるようになります。
         </slide>
         <slide>
-          <button class="startButton mb-20" @click="close5(); gameStart()">STRAT</button>
+          <button class="startButton mb-20" @click="close5(); gameStart()">START</button>
         </slide>
 
         <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -204,12 +204,12 @@
           '「3+7」を計算をし、結果を出力するようにするにはXXXを何に修正したらよいでしょうか。\n\nprint( XXX )',
           '「Ken」を出力するために、nameの中身を\nXXXから何に修正したら\nよいでしょうか。\n\nname = XXX\nprint(name)',
           '「My name is Ken」を出力するために、\nXXXを適切な変数の名前に修正してください。\n\nname = "Ken"\nprint("My name is "\\\ \n + XXX)',
-          '以下のif文の条件式が成り立つときの処理が実行されるためには、XXXの値が何だったらよいでしょう。\n\nscore = XXX\nif score == 100: \n    print("よくできました！")',
+          '以下のif文の条件式が成り立つときの処理が実行されるためには、XXXの値が何だったらよいでしょう。\n\nscore = XXX\nif score == 100: \n    print(\n"よくできました！")',
         ],
         answer:[
           '"Hello INIAD"',
           '3+7',
-          'Ken',
+          '\"Ken\"',
           'name',
           '100',
         ],
